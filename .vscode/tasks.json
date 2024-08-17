@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "./cmd/build.bat",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "Test HaxeUI Project"
+		}
+	]
+}

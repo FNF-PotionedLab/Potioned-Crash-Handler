@@ -1,0 +1,15 @@
+-cp src
+-main Main
+
+-lib haxeui-core
+-lib haxeui-hxwidgets
+-lib hxWidgets
+
+-D ABI=-MD
+-D WXSTATIC
+
+-D HXCPP_CHECK_POINTER
+-D HXCPP_STACK_LINE
+
+-cpp export/cpp
+-D HXCPP_M64
