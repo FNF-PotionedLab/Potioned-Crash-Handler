@@ -4,6 +4,6 @@
 This is the public source code for the crash handler used for Funkin Potioned.
 
 ## ❗ Issue/Fix Proposals
-If you have an issue you'd like to propose, head over to the [Issues Tab](https://github.com/FNF-PotionedLab/Funkin-Potioned/issues).
+If you have an issue you'd like to propose, head over to the [Issues Tab](https://github.com/FNF-PotionedLab/Potioned-Crash-Handler/issues).
 
-If you have a fix you'd like to propose, head over to the [Pull Requests Tab](https://github.com/FNF-PotionedLab/Funkin-Potioned/pulls).
+If you have a fix you'd like to propose, head over to the [Pull Requests Tab](https://github.com/FNF-PotionedLab/Potioned-Crash-Handler/pulls).
