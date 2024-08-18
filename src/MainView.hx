@@ -5,6 +5,7 @@ import sys.FileSystem;
 import sys.io.Process;
 
 import haxe.io.Path;
+import haxe.ui.HaxeUIApp;
 
 import haxe.ui.containers.Box;
 import haxe.ui.containers.VBox;
@@ -40,6 +41,9 @@ class MainView extends VBox {
 
     public function new() {
         super();
+        final app:HaxeUIApp = HaxeUIApp.instance;
+        app.icon = "assets/icon.ico";
+
         var crashDump:String = null;
         var crashDumpPath:String = null;
 
