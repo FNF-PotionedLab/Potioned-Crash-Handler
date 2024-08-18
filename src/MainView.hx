@@ -1,8 +1,9 @@
 package;
 
 import sys.io.File;
-import sys.FileSystem;
 import sys.io.Process;
+
+import sys.FileSystem;
 
 import haxe.io.Path;
 import haxe.ui.HaxeUIApp;
@@ -10,6 +11,9 @@ import haxe.ui.HaxeUIApp;
 import haxe.ui.containers.Box;
 import haxe.ui.containers.VBox;
 import haxe.ui.containers.ScrollView;
+
+import haxe.ui.containers.dialogs.Dialogs;
+import haxe.ui.containers.dialogs.MessageBox;
 
 import haxe.ui.components.Image;
 import haxe.ui.components.Label;
@@ -54,8 +58,11 @@ class MainView extends VBox {
             if(FileSystem.exists(cmdArgs[0])) {
                 crashDumpPath = cmdArgs[0];
                 crashDump = File.getContent(crashDumpPath);
-            } else 
-                trace("Crash dialog opened without valid file path, using placeholders instead!");
+            } else {
+                final message:String = "Crash dialog opened without valid file path, using placeholders instead!";
+                Dialogs.messageBox(message, "Warning", MessageBoxType.TYPE_WARNING);
+                trace(message);
+            }
         }
         final banner:Image = new Image();
         banner.resource = "assets/banner.png";
@@ -137,7 +144,9 @@ class MainView extends VBox {
                 new Process("notepad", [crashDumpPath]);
             }
             catch(e) {
-                trace('Something went wrong trying to view the crash dump: ${e}');
+                final message:String = 'Something went wrong trying to view the crash dump: ${e}';
+                Dialogs.messageBox(message, "Error", MessageBoxType.TYPE_ERROR);
+                trace(message);
             }
         };
         buttonArea.addComponent(viewCrashDumpBtn);
@@ -156,7 +165,9 @@ class MainView extends VBox {
                 Sys.exit(0);
             }
             catch(e) {
-                trace('Something went wrong trying to restart the game: ${e}');
+                final message:String = 'Something went wrong trying to restart the game: ${e}';
+                Dialogs.messageBox(message, "Error", MessageBoxType.TYPE_ERROR);
+                trace(message);
             }
         }
         buttonArea.addComponent(restartBtn);
